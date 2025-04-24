@@ -1,4 +1,4 @@
-### Overview
+### Overview [DRAFT RELEASE]
 This paper introduces an arc-based pathfinding algorithm designed for navigating structured networks formed by intersecting circles,
 such as biological systems, fiber routing, or mechanical movement constrained to rails. The algorithm leverages geometric relationships and localized search to efficiently compute approximate shortest paths that respect curvature and structural boundaries. Applications include neuron tracing, microfluidic path optimization, vascular modeling, and layout routing for tightly curved circuit or fiber systems.
 
