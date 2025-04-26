@@ -3,6 +3,10 @@
     needs:
     - build
     runs-on: ubuntu-latest
+    on:
+      push:
+        branches:
+        - 'main'
 
     environment:
       name: testpypi
