@@ -28,4 +28,4 @@ pathfinding, geometric constraints, KD-tree, circular intersections, robotic nav
 - Extend package to support Z-axis coordinates
 
 #### Notes
-While k-10 constraints are used for implementation, additional handling has been added to support datasets that do not meet minimum neighbor requiremebts
+While k-10 constraints are used for implementation, additional handling has been added to support datasets that do not meet the minimum neighbor requirement
