@@ -4,9 +4,7 @@
     - build
     runs-on: ubuntu-latest
     on:
-      push:
-        branches:
-        - 'main'
+      push
 
     environment:
       name: testpypi
