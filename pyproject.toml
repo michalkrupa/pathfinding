@@ -1,6 +1,6 @@
 [project]
 name = "CirclePathFinder"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Michal Krupa", email="michalkrupa@gmail.com" },
 ]
