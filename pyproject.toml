@@ -1,6 +1,6 @@
 [project]
 name = "CirclePathFinder"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Michal Krupa", email="michalkrupa@gmail.com" },
 ]
@@ -15,7 +15,7 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
 dependencies = [
-    "scipy",
+    "scipy>=1.8,<2.0",
 ]
 
 [project.urls]

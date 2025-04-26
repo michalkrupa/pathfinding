@@ -2,7 +2,6 @@
 import math
 from collections import defaultdict
 from heapq import heappush, heappop
-from itertools import combinations
 from scipy.spatial import KDTree
 
 def arc_distance(p1, p2, center):
