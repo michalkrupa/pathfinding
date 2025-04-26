@@ -1,6 +1,6 @@
 [project]
 name = "CirclePathFinder"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Michal Krupa", email="michalkrupa@gmail.com" },
 ]
@@ -13,6 +13,10 @@ classifiers = [
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
+
+dependencies = [
+    "scipy",
+]
 
 [project.urls]
 Homepage = "https://github.com/michalkrupa/pathfinding/"
