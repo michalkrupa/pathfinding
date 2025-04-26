@@ -5,7 +5,7 @@ such as biological systems, fiber routing, or mechanical movement constrained to
 ### Usage
 
 ```python
-coordinates = [[x1,y1],[x2,y2],[x33,y3]]
+coordinates = [[x1,y1],[x2,y2],[x3,y3]]
 (shortest_path, walk) = calculate_shortest_path(coordinates)
 ```
 
@@ -26,3 +26,6 @@ pathfinding, geometric constraints, KD-tree, circular intersections, robotic nav
 
 #### Future Work
 - Extend package to support Z-axis coordinates
+
+#### Notes
+While k-10 constraints are used for implementation, additional handling has been added to support datasets that do not meet minimum neighbor requiremebts
