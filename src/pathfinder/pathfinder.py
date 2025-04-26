@@ -25,7 +25,8 @@ class FastCircleGraph:
         pink_points = set()
 
         for i, p1 in enumerate(self.white_points):
-            dists, indices = tree.query(p1, k=self.k + 1)
+            k_actual = min(self.k + 1, len(self.white_points))  # <-- this fixes it
+            dists, indices = tree.query(p1, k=k_actual)
             for j in indices[1:]:  # skip self
                 p2 = self.white_points[j]
                 if (i, j) in circle_map or (j, i) in circle_map:
@@ -44,8 +45,6 @@ class FastCircleGraph:
                     self.graph[pink].append((p1, math.dist(p1, pink)))
                     self.graph[pink].append((p2, math.dist(p2, pink)))
                 circle_map[(i, j)] = True
-
-        # Optionally connect pink-pink if they share a center (here we omit this for speed)
 
     def find_shortest_path(self, start_white, end_white):
         start = tuple(start_white)
