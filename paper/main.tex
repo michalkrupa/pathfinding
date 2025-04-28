@@ -1,0 +1,73 @@
+\documentclass[sigconf]{acmart}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Geometrically-Constrained Pathfinding: An Arc-Based Algorithm for Navigation in Restricted Domains}
+\author{Michal Krupa}
+\affiliation{%
+  \institution{Independent Researcher}
+  \country{USA}
+}
+
+\begin{abstract}
+This paper introduces an arc-based pathfinding algorithm designed for navigating structured networks formed by intersecting circles, such as biological systems, fiber routing, or mechanical movement constrained to rails. The algorithm leverages geometric relationships and localized search to efficiently compute approximate shortest paths that respect curvature and structural boundaries. Applications include neuron tracing, microfluidic path optimization, vascular modeling, and layout routing for tightly curved circuit or fiber systems.
+\end{abstract}
+
+\keywords{pathfinding, geometric constraints, KD-tree, circular intersections, robotic navigation, fiber routing}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Pathfinding in constrained environments arises in numerous domains, including robotics, biological modeling, and visual storytelling. Classical algorithms perform poorly when paths must conform to geometric constraints such as arcs or structural layouts. This paper introduces an arc-based method that follows the inherent geometric limitations of the domain.
+
+\section{Algorithm Overview}
+Given a set of spatial endpoints $W = \{w_1, ..., w_n\}$, circles are formed between each point and its $k$-nearest neighbors. These define intersections $P$ used to form an arc-based graph $G$. Each arc's length is computed as:
+\[
+d_{\text{arc}}(p_a, p_b; c) = r \cdot \min\left(|\theta_a - \theta_b|, 2\pi - |\theta_a - \theta_b|\right)
+\]
+with $r = \|p_a - c\|$ and angles $\theta$ measured from the circle center $c$.
+
+\section{Experimental Results}
+We compare the arc-based algorithm with a KD-tree-optimized version of Dijkstra’s algorithm on a 10,000-point dataset.
+
+\begin{table}[h]
+\caption{Runtime comparison and qualitative performance}
+\begin{tabular}{lccc}
+\toprule
+Algorithm & Runtime (s) & Curvature-Aware & Visual Quality \\
+\midrule
+KDTree Dijkstra & 0.48 & No & Low \\
+Arc Pathfinder & 2.51 & Yes & High \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{arc_vs_dijkstra_diagram.png}
+  \caption{Comparison of direct vs. arc-based pathfinding in the presence of obstacles.}
+  \label{fig:comparison}
+\end{figure}
+
+\section{Code Availability}
+The full implementation of the algorithm is available as open-source code at: \url{https://github.com/michalkrupa/pathfinding}
+
+\section{Conclusion}
+The arc-based pathfinder offers interpretability and structural realism for geometric domains. Future work includes hybridization with linear navigation and deployment in hardware-constrained path systems.
+
+\begin{acks}
+We thank the contributors to open-source geometry libraries and acknowledge the support of interdisciplinary visualization research.
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\begin{thebibliography}{1}
+
+\bibitem{dubins} J.~A. Reeds and L.~A. Shepp. 1990. Optimal paths for a car that goes both forwards and backwards. \emph{Pacific J. Math.} 145, 2 (1990), 367--393.
+\end{thebibliography}
+
+\end{document}
